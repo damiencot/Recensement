@@ -1,0 +1,30 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+            </div>
+
+            <div class="span9">
+                <h2>Information Recense</h2>
+                <div id="collapseOne" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <div class="span4">
+                            <h4>Recense</h4>
+                            <form action="{{ path('ajout') }}" method="POST">
+                                {{ form_widget(formHabitants) }}
+                                <button class="btn btn-primary" type="submit">Ajouter</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+{% endblock %}

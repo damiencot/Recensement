@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+
+        /* Pour améliorer un peu la lisibilité on ajoute une marge au corps de
+         * texte. Ca aurait pu être fait en agrandissant les marges au niveau
+         * de la page mais je trouve qu'utiliser un div dédié pour le contenu
+         * est cohérent */
+        #content {
+            margin: 25px;
+        }
+
+        /* On teste quelques d'options css différentes */
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold
+        }
+
+        h2 {
+            font-style: italic;
+            font-weight: bold;
+            border: solid 1px #ccc;
+        }
+
+        /* On met même en place un système de colonnes pour tester les float */
+        .col-25, .col-75 {
+            float: left;
+        }
+
+        .col-25 {
+            width: 25%;
+        }
+
+        .col-75 {
+            width: 75%;
+        }
+
+        .row {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Maintenant on rempli le document -->
+<div id="content">
+    <h1>Habitant</h1>
+    <h2>{{ object.nom }}</h2>
+    <h2>{{ object.prenom }}</h2>
+    <h2>{{ object.sexe }}</h2>
+    {% if object.sexe =="1" %}
+        <h2>Homme</h2>
+    {% else %}
+        <h2>Femme</h2>
+    {% endif %}
+    <h2>{{ object.dateNaissance|date('d/m/Y') }}</h2>
+    <h2>{{ object.telephone }}</h2>
+    <h2>{{ object.adresse }}</h2>
+    <h2>{{ object.zone }}</h2>
+</div>
+<div id="content">
+    <h1>Pere</h1>
+    <h2>{{ parent1.nom }}</h2>
+    <h2>{{ parent1.prenom }}</h2>
+    <h2>{{ parent1.dateNaissance|date('d/m/Y') }}</h2>
+</div>
+<div id="content">
+    <h1>Mere</h1>
+    <h2>{{ parent2.nom }}</h2>
+    <h2>{{ parent2.prenom }}</h2>
+    <h2>{{ parent2.dateNaissance|date('d/m/Y') }}</h2>
+</div>
+</body>
+</html>

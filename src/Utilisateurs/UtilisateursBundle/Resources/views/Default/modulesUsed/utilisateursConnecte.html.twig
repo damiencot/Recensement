@@ -1,0 +1,10 @@
+{% if is_granted('ROLE_ADMIN') %}
+    <li>
+        <a href="{{ path('admin') }}">Utilisateurs</a>
+    </li>
+{% else %}
+{% endif %}
+
+<li>
+    <a href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
+</li>

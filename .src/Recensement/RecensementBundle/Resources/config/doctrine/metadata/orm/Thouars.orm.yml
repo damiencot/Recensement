@@ -1,0 +1,23 @@
+Thouars:
+    type: entity
+    table: thouars
+    indexes:
+        zone_thouars:
+            columns:
+                - zone_thouars
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        zoneThouars:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: zone_thouars
+    lifecycleCallbacks: {  }

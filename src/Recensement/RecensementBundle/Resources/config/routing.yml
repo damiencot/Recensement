@@ -1,0 +1,29 @@
+presentation:
+    path:     /
+    defaults: { _controller: RecensementBundle:Recense:presentation }
+
+ajout:
+    pattern:  /ajout
+    defaults: { _controller: RecensementBundle:Recense:ajout }
+
+modification:
+    path:     /{id}/modification
+    defaults: { _controller: RecensementBundle:Recense:modification }
+
+supprimer:
+    path:     /{id}/supprimer
+    defaults: { _controller: RecensementBundle:Recense:supprimer }
+
+pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: RecensementBundle:Recense:pdf }
+
+rechercheRecenses:
+    pattern:  /recherche
+    defaults: { _controller: RecensementBundle:Recense:rechercheTraitement }
+
+villes:
+    pattern:  /villes/{cp}
+    defaults: { _controller: RecensementBundle:Recense:villes }
+    options:
+      expose: true

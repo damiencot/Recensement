@@ -1,0 +1,32 @@
+<div class="span3">
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="well">
+        <ul class="nav nav-list">
+            <li class="nav-header">Nos Recense</li>
+            <li>
+                <!-- Route -->
+                <a href="{{ path('presentation') }}">Liste</a>
+            </li>
+            <li>
+                <!-- Route -->
+                <a href="{{ path('ajout') }}">Ajouter</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="well">
+        <ul class="nav nav-list">
+            <li>
+                <!-- Verification du role de chaque Utilisateurs-->
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
